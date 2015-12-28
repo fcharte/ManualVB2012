@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="XSDSchema1" targetNamespace="http://tempuri.org/XSDSchema1.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/XSDSchema1.xsd" xmlns:mstns="http://tempuri.org/XSDSchema1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Equipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Modelo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Marca" type="xs:string" />
+              <xs:element name="Serie" type="xs:string" />
+              <xs:element name="Modelo" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fecha" type="xs:dateTime" />
+        <xs:element name="Adquisicion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Procedencia" type="xs:string" />
+              <xs:element name="Precio" type="xs:integer" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
