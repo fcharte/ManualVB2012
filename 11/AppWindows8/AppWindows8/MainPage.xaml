@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="AppWindows8.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppWindows8"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Ellipse Fill="#FFE0CFA1" HorizontalAlignment="Left" Height="652" Margin="298,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="652"/>
+        <Ellipse x:Name="Btn1" HorizontalAlignment="Left" Height="200" Margin="434,39,0,0" VerticalAlignment="Top" Width="380" Fill="#FF0D33C8" Tag="1" IsDoubleTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False"/>
+        <Ellipse x:Name="Btn3" Fill="#FFECEC4B" HorizontalAlignment="Left" Height="200" Margin="434,487,0,0" VerticalAlignment="Top" Width="380" Tag="3" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Ellipse x:Name="Btn4" Fill="#FF6ED136" HorizontalAlignment="Left" Height="200" Margin="210.11,264.27,0,0" VerticalAlignment="Top" Width="380" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Tag="4" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False">
+            <Ellipse.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="Btn2" Fill="#FFBD1111" HorizontalAlignment="Left" Height="200" Margin="657.875,264.27,0,0" VerticalAlignment="Top" Width="380" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Tag="2" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False">
+            <Ellipse.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <TextBlock x:Name="Marcador" HorizontalAlignment="Left" Height="90" Margin="1018,582,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" FontSize="24" Text="Actual:"/>
+        <Ellipse x:Name="Btn4_Copy" HorizontalAlignment="Left" Height="200" Margin="289.239,264.27,0,0" VerticalAlignment="Top" Width="380" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Tag="4" Fill="#FFE0CFA1">
+            <Ellipse.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse x:Name="Btn1_Copy" HorizontalAlignment="Left" Height="200" Margin="434,98,0,0" VerticalAlignment="Top" Width="380" Tag="1" Fill="#FFE0CFA1"/>
+        <Ellipse x:Name="Btn3_Copy" Fill="#FFE0CFA1" HorizontalAlignment="Left" Height="200" Margin="434,431,0,0" VerticalAlignment="Top" Width="380" Tag="3"/>
+        <Ellipse x:Name="Btn2_Copy" Fill="#FFE0CFA1" HorizontalAlignment="Left" Height="200" Margin="599.648,264.27,0,0" VerticalAlignment="Top" Width="380" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Tag="2">
+            <Ellipse.RenderTransform>
+                <CompositeTransform Rotation="-90"/>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <TextBlock HorizontalAlignment="Left" Height="222" Margin="457,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontFamily="Broadway" FontSize="100" TextAlignment="Center">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        	<Run Text="Simon"/>
+        	<LineBreak/>
+        	<Run Text="8X"/>
+        </TextBlock>
+        <Button x:Name="BtnComenzar" Content="Comenzar" HorizontalAlignment="Left" Height="44" Margin="558,509,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click_1" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" Opacity="0"/>
+    </Grid>
+</Page>
