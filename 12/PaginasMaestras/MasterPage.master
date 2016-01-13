@@ -1,0 +1,55 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div>
+                
+            <div style="font-size: 16pt; width: 544px; height: 16px; text-align: center">
+                <p>Anaya Multimedia</p></div>
+        <br />
+        &nbsp;
+        
+       <div style="float: left; width: 93px; height: 112px; left: 8px; position: absolute; top: 56px; text-align: center;">
+           <strong>&nbsp;Opciones<br />
+               <asp:ContentPlaceHolder ID="OpcionesContent" runat="server">
+               </asp:ContentPlaceHolder>
+           </strong>
+        </div>
+        <div style="width: 384px; height: 272px; left: 168px; position: absolute; top: 56px;">
+        <asp:contentplaceholder id="MainContent" runat="server">
+        </asp:contentplaceholder>
+        </div>
+        &nbsp;&nbsp;&nbsp;<br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+            <br />
+            <br />
+            <br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        (c) 2013&nbsp; - Grupo Anaya&nbsp;     </div>
+    </form>
+</body>
+</html>
