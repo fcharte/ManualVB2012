@@ -1,0 +1,98 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    x:Class="WP8ListaCompra.MainPage"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded_1" OrientationChanged="PhoneApplicationPage_OrientationChanged_1">
+<phone:PhoneApplicationPage.ApplicationBar>
+    <shell:ApplicationBar>
+        <shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarMenuItem IsEnabled="True" Text="Ordenar"/>
+            <shell:ApplicationBarMenuItem IsEnabled="True" Text="Buscar"/>
+        </shell:ApplicationBar.MenuItems>
+        <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" IsEnabled="True" Text="Anotar" Click="ApplicationBarIconButton_Click_1"/>
+        <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/delete.png" IsEnabled="True" Text="Eliminar todo" Click="ApplicationBarIconButton_Click_2"/>
+    </shell:ApplicationBar>
+</phone:PhoneApplicationPage.ApplicationBar>
+
+     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!-- NOTA PARA LA TRADUCCIÓN:
+            Para traducir las cadenas mostradas, copia sus valores a las claves con el nombre
+            correspondiente en el archivo de recursos del idioma neutro (AppResources.resx) de la aplicación y
+            reemplaza el valor de texto codificado de forma rígida entre las comillas de los atributos
+            con la cláusula de enlace cuya ruta de acceso apunte a ese nombre de cadena.
+
+            Por ejemplo:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            Este enlace apunta al recurso de cadena de la plantilla denominado "ApplicationTitle".
+
+            Al agregar idiomas admitidos en la pestaña Propiedades del proyecto se creará un
+            nuevo archivo resx por idioma que puede contener los valores traducidos de las
+            cadenas de la interfaz de usuario. El enlace de estos ejemplos hará que el valor de los atributos
+            se tome del archivo .resx correspondiente al valor de
+            CurrentUICulture de la aplicación en tiempo de ejecución.
+         -->
+
+        <!--Control Pivot-->
+<phone:Pivot Title="LISTA DE LA COMPRA">
+    <!--Elemento Pivot uno-->
+    <phone:PivotItem Header="Todas">
+        <!--Lista de líneas dobles con ajuste de texto-->
+        <phone:LongListSelector x:Name="ListaTodas" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+            <phone:LongListSelector.ItemTemplate>
+                <DataTemplate x:Name="PlantillaTodas">
+                    <StackPanel Margin="0,0,0,17">
+                        <Grid Height="73" Margin="10,0,12,0">
+                            <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" HorizontalAlignment="Right"/>
+                            <CheckBox IsChecked="{Binding Comprado}" HorizontalAlignment="Left" Checked="CheckBox_Click" Unchecked="CheckBox_Click" ClickMode="Press"/>
+                        </Grid>
+                        <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </phone:LongListSelector.ItemTemplate>
+        </phone:LongListSelector>
+    </phone:PivotItem>
+    <!--Elemento Pivot dos-->
+            
+    <phone:PivotItem Header="Pendientes">
+        <!--Lista de líneas dobles sin ajuste de texto-->
+        <phone:LongListSelector x:Name="ListaPendientes" Margin="0,0,-12,0" ItemsSource="{Binding FilteredItems}">
+            <phone:LongListSelector.ItemTemplate>
+                <DataTemplate x:Name="PlantillaPendientes">
+                    <StackPanel Margin="0,0,0,17">
+                        <Grid Height="73" Margin="10,0,12,0">
+                            <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" HorizontalAlignment="Right"/>
+                            <CheckBox IsChecked="{Binding Comprado}" HorizontalAlignment="Left" Checked="CheckBox_Click" Unchecked="CheckBox_Click" ClickMode="Press"/>
+                        </Grid>
+                        <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </phone:LongListSelector.ItemTemplate>
+        </phone:LongListSelector>
+    </phone:PivotItem>
+</phone:Pivot>
+
+        <!--Quitar la marca de comentarios para ver una cuadrícula de alineación que
+            ayuda a comprobar que los controles están alineados en los límites normales.  La imagen tiene un margen superior de -32px para
+            tener en cuenta la bandeja del sistema. Establécelo en 0 (o quite el margen)
+            si la bandeja del sistema está oculta.
+
+            Antes de enviarla, quita este código XAML y la propia imagen.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" />-->
+    </Grid>
+
+</phone:PhoneApplicationPage>
