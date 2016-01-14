@@ -1,0 +1,13 @@
+﻿<vm:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:WP8ListaCompra"
+    SampleProperty="Valor de propiedad Sample Text">
+
+    <vm:MainViewModel.Items>
+        <vm:ItemViewModel LineOne="Pasta" LineTwo="Macarrones y pasta fresca rellena" Comprado="True"/>
+        <vm:ItemViewModel LineOne="Queso" LineTwo="Queso rallado para fundir" Comprado="False"/>
+        <vm:ItemViewModel LineOne="Tomate frito" LineTwo="Varios botes de tomate frito" Comprado="True"/>
+    </vm:MainViewModel.Items>
+
+</vm:MainViewModel>
